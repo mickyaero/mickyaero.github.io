@@ -1,5 +1,5 @@
 
-/*    Default Layout: 992px. 
+/*    Default Layout: 992px.
     Gutters: 24px.
     Outer margins: 48px.
     Leftover space for scrollbars @1024px: 32px.
@@ -85,8 +85,8 @@ figure, p{
 }
 
 
-  
- 
+
+
 }
 
 
@@ -255,14 +255,14 @@ px      68    160    252    344    436    */
 
 
 /*  Retina media query.
-  Overrides styles for devices with a 
+  Overrides styles for devices with a
   device-pixel-ratio of 2+, such as iPhone 4.
 -----------------------------------------------    */
 
-@media 
+@media
   only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-device-pixel-ratio: 2) {
-  
-  
-  
+
+
+
 }

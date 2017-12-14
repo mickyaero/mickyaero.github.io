@@ -1,10 +1,10 @@
 
 /* =================================== */
-/*	Basic Style 
+/*	Basic Style
 /* =================================== */
 
 body {
-    background-color: #fff;
+    background-color: #fdffe2;
     font-family: 'Open Sans', sans-serif;
     line-height: 1;
 	font-size: 13px;
@@ -54,11 +54,11 @@ h4, h5, h6 {
     content: " ";
     display: table;
 }
- 
+
 .clear:after {
    clear: both;
 }
- 
+
 .clear {
    *zoom: 1;
 }
@@ -475,7 +475,7 @@ width: 11px;
   position: absolute;
   top: -41px;
   width: 80px;
-    
+
     -webkit-transition: 0.3s ease-out 0s;
        -moz-transition: 0.3s ease-out 0s;
         -ms-transition: 0.3s ease-out 0s;
@@ -490,7 +490,7 @@ figcaption.mask {
   padding: 30px 0 30px 30px;
   position: absolute;
   width: 100%;
-    
+
     -webkit-transition: 0.3s ease-out 0s;
        -moz-transition: 0.3s ease-out 0s;
         -ms-transition: 0.3s ease-out 0s;
@@ -547,7 +547,7 @@ figcaption.mask span {
 
 .fact-icon {
   position: relative;
-  width: 50px; 
+  width: 50px;
   height: 28.87px;
   background-color: #1F2021;
   margin: 14.43px auto;
