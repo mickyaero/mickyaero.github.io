@@ -91,7 +91,26 @@
                           During the manufacturing of a product some deviations come and in order to know the performance of the manufactured par
                           t a CAD of the manufactured part is required. The ﬁrst step towards that is scanning the part for gener
                           ating its point cloud data and then making a CAD out of that. I generated a NURBS(Non-Uniform Rational Basis Spline) surface of the component from its point clou
-                          d data using MATLAB<sup>TM</sup> & Octave. The code was tested with the turbine blades of an aircraft engine and it performed accurately.
+                          d data using MATLAB<sup>TM</sup> & Octave. The code was tested with the turbine blades of an aircraft engine and it performed
+                           accurately.
+                          <br/>
+                          <br/>
+                           The process was divided into 3 parts:
+                           <br/>
+                            <br/>
+                           <b>1. Point Cloud Regularization.</b>
+                           <br/>
+                           This was done in MATLAB<sup>TM</sup>. The resultant regualrized surface was fed into Octave.
+                           <br/>
+                            <br/>
+                           <b>2. NURBS Surface Generation.</b>
+                           NURBS package in Octave was used to generate a NURBS surface. This generated surface is not very fine and
+                           the surface parameters need to be optimized for the minimum error between the point cloud and the surface.
+                           <br/>
+                            <br/>
+                           <b>3. Optimizing the NRBS Surface for a finer surface.</b>
+                           <br/>
+                           Meu-lambda Evolutionary algorithm was used for the optimization.
 
 			</p>
     		        <br /><br />
