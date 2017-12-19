@@ -93,49 +93,24 @@
                              In MOOSE (Multiscale Object-Oriented Simulation Environment) one such solver is “KSOLVE”.
                              The two methods I worked on for parallelization were OpenMP and NVIDIA Cuda®.
                              Results obtained from OpenMP showed very less to no improvement in computation time.
-                             It was then parallelized using Cuda® and a signiﬁcant reduction in computation time was observed. Details <a target="_blank" href="http://gsocmoose2017.blogspot.in/2017/08/parallelization-in-moose_25.html">here.</a>
+                             It was then parallelized using Cuda® and a signiﬁcant reduction in computation time was observed.
 			    		        </p>
     		        <br />
-            	       <!--
-                     <center><img src="../img/portfolio/lap-hazy.png" width="700"></center>
+
+                     <center><img src="../img/portfolio/openmp.png" width="700"></center>
                         <p style="FONT-SIZE:16px; COLOR:black; LINE-HEIGHT:20px; TEXT-ALIGN:justify;">
-			We formulated the problem of joint desmoking, despeckling and denoising of laparoscopic images as a Bayesian inference problem.
-			This formulation relies on a novel probabilistic graphical model of images, which includes a Markov Random Field (MRF)
-			formulation for color-contrast. Another MRF models smoothness on the uncorrupted color image as well as the hidden transmission-map
-			image that indicates color attenuation due to smoke. The (fixed) areas in the image that have speckles are filled in with a prior
-            that enforces that patches in the image are sparse in some dictionary learned on clean laparoscopy images.
+			The image above shows the results obtained by using OpenMP. It actually gave a slow down as the time taken for the
+      thread creation and destruction dominated over the time saved due to parallel computation. Several strategies were applied
+      but no success. Then I shifted to using NVIDIA Cuda®.
 			</p>
+                    <center><img src="../img/portfolio/cuda.png" ></center>
                         <p style="FONT-SIZE:16px; COLOR:black; LINE-HEIGHT:20px; TEXT-ALIGN:justify;">
-			The MRF for spatial regularity penalizes, in an edge-preserving way, the differences between pixels in a neighborhood.
-			The color-contrast prior is incorporated by learning marginal gamma distributions on color intensities in clean laparoscopy images
-			and penalizing some measure of distance between this learned prior and the estimated image. The dictionary MRF prior enforces a penalty
-            on error in dictionary reconstruction of pixel neighborhoods in the image and on the sparsity of such a reconstruction.
+                          The image abive shows the results of using Cuda. A significant amount of speed up was obtained.
+			Separate "rk4" solver for the device(GPU) was written in Cuda C++.
+       The full details can be found <a target="_blank" href="http://gsocmoose2017.blogspot.in/2017/08/parallelization-in-moose_25.html">here.</a>
     		        </p>
     		        <br />
-            	        <center><img src="../img/portfolio/lap-prior.png" width="700"></center>
-                        <p style="FONT-SIZE:16px; COLOR:black; LINE-HEIGHT:20px; TEXT-ALIGN:justify;">
-			The process starts with estimating the ambient corruption color, which is the color of the ambient light scattered by the smoke.
-			This is typically low in saturation, so regions with low variance in color are selected and their color is projected on a
-			sub-space pre-learned from annotated smoky laparoscopy images.
-    		        </p>
-    		        <br />
-            	        <center><img src="../img/portfolio/lap-s.png" width="700"></center>
-                        <p style="FONT-SIZE:16px; COLOR:black; LINE-HEIGHT:20px; TEXT-ALIGN:justify;">
-			The above optimization is highly non-convex, and has the transmission map as a hidden random variable. We use the expectation maximization
-            algorithm to combat this. The difficult expectation step is handled using either the mode approximation or Variational Bayes.
-            This gives reasonably good reconstructions of the underlying clean images. (only desmoking results shown below).
-			In the three columns, our result is the left-most, and is compared to two state-of-the-art landscape dehazing methods.
-			Our method preserves the natural-ness and improves visual quality of the images best. More details in the ISBI '16 paper
-			<a target="_blank" href="../pubs/isbi16.pdf">here</a> (outdated, writing another paper), implementation
-			<a target="_blank" href="http://www.bitbucket.org/ayushrb/laparoscopy">here</a> (private for now).
-    		        </p>
-    		        <br />
-            	        <center><img src="../img/portfolio/lap-res.png" width="700"></center>
-                        <p style="FONT-SIZE:16px; COLOR:black; LINE-HEIGHT:20px; TEXT-ALIGN:justify;">
-			Previously, we used the Dark Channel Prior method of landscape image dehazing for the laparoscopy setting and obtained reasonably good
-			dehazed results. Implementation for this <a target="_blank" href="http://www.github.com/riddhishb/Laproscopic-Image-Dehazing">here</a>.
-    		        </p>
-              -->
+
                     </div>
                 </div>
             </div>
